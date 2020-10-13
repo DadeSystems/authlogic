@@ -1,4 +1,8 @@
-require "scrypt"
+begin
+  require "scrypt"
+rescue LoadError
+  warn 'Missing scrypt gem'
+end
 
 module Authlogic
   module CryptoProviders
